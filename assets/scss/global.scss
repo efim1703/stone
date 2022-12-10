@@ -1,4 +1,24 @@
-@import '/assets/scss/variables.scss';
-.div {
-    color: $action;
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-center: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.p-relative {
+  position: relative;
 }
