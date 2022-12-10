@@ -1,7 +1,7 @@
 <!-- Please remove this file from your project -->
 <template>
   <div class="div">
-    component-child 
+    component-Ss
   </div>
 </template>
 
