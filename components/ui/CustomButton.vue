@@ -27,7 +27,7 @@ export default {
   background: $primary;
   border-radius: 100px;
   padding: 10px 30px;
-
+  transition: .5s;
   .title {
     font-weight: 800;
     align-items: center;
@@ -39,14 +39,16 @@ export default {
 
   }
   .icon {
-    margin-left: 12px;
-    width: 15px;
-    height: 15px;
+    width: fit-content;
+    height: fit-content;
     svg {
       width: 15px;
       height: 15px;
     }
   }
-
+  &:hover {
+    cursor: pointer;
+    background: $action;
+  }
 }
 </style>
