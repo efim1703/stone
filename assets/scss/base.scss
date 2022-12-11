@@ -8,6 +8,8 @@
 body {
   box-sizing: border-box;
   font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: $dark;
+  color: #fff;
 }
 
 a,
@@ -22,6 +24,7 @@ button:hover {
   font-family: 'Plus Jakarta Sans';
   text-decoration: none;
   border: none;
+  color: #fff;
 }
 
 input,
