@@ -4,8 +4,9 @@
     <h2 class="h-title">Чрезвычайно высокий стандарт удовлетворенности клиентов</h2>
     <div class="about-us-list">
       <AboutUsItem
-        v-for="card in cardList"
+        v-for="(card,index) in cardList"
         :card = "card"
+        :key = "index"
       />
 
     </div>

@@ -31,6 +31,15 @@
     padding: 0 10px;
     text-align: center;
 
+    &:hover .about-us-image {
+      background-color: #DAA14C;
+      -webkit-transform: rotateY(360deg);
+      -moz-transform: rotateY(360deg);
+      -ms-transform: rotateY(360deg);
+      -o-transform: rotateY(360deg);
+      transform: rotateY(360deg);
+    }
+
     & > *:not(:last-child){
       margin-bottom: 10px;
     }
@@ -44,8 +53,20 @@
       border-radius: 50%;
       margin: 0 auto 10px;
 
+      -webkit-transition: all 0.9s;
+      -moz-transition: all 0.9s;
+      -ms-transition: all 0.9s;
+      -o-transition: all 0.9s;
+      transition: all 0.9s;
+
       img{
         width: 50px;
+        height: 50px;
+        -webkit-transform: rotateY(360deg);
+        -moz-transform: rotateY(360deg);
+        -ms-transform: rotateY(360deg);
+        -o-transform: rotateY(360deg);
+        transform: rotateY(360deg);
       }
     }
 
