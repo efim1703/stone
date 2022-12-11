@@ -1,0 +1,61 @@
+<template>
+  <div class="about-us-item">
+    <div class="about-us-image">
+      <img class="circle" :src="getPath(card.svgName)" alt="Icon"/>
+    </div>
+    <h3>{{ card.title }}</h3>
+    <p> {{ card.caption }}</p>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: 'AboutUsItem',
+    props: {
+      card: {
+        type: Object,
+        required: true
+      }
+    },
+    methods: {
+      getPath(fileName) {
+        return require(`@/assets/svg/${ fileName }.svg`);
+      }
+    }
+  }
+</script>
+
+<style lang="scss" scoped>
+  .about-us-item {
+    flex-basis: 25%;
+    padding: 0 10px;
+    text-align: center;
+
+    & > *:not(:last-child){
+      margin-bottom: 10px;
+    }
+    .about-us-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      width: 100px;
+      background: $primary;
+      border-radius: 50%;
+      margin: 0 auto 10px;
+
+      img{
+        width: 50px;
+      }
+    }
+
+    h3 {
+      line-height: 23px;
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+</style>
