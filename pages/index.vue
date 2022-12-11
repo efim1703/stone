@@ -24,18 +24,19 @@
         </div>
       </div>
     </div>
-    <div class="section" style="height: 1000px">
-
+    <div class="container">
+      <AboutUs />
     </div>
   </div>
 </template>
 
 <script>
 import CustomButton from "~/components/ui/CustomButton.vue";
+import AboutUs from "~/components/AboutUs";
 
 export default {
   name: 'IndexPage',
-  components: {CustomButton},
+  components: {AboutUs, CustomButton},
   data() {
     return {
 

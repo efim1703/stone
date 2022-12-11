@@ -36,3 +36,20 @@
 .full-height {
   height: 100%;
 }
+
+.h-subtitle {
+  color: $action;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+.h-title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 60px;
+}
+
