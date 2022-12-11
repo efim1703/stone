@@ -15,7 +15,7 @@
     <div class="line"></div>
     <div class="top-menu--footer">
       <div class="logo">
-        <span>СТОЛЕШНИЦА</span>
+        <span>СТОЛЕШНИЦffffffА</span>
       </div>
       <nav class="navigation">
         <nuxt-link to="/" active-class="active" exact>ГЛАВНАЯ</nuxt-link>
