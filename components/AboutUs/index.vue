@@ -66,4 +66,21 @@
     width: 70%;
     margin-bottom: 40px;
   }
+
+  @media (max-width: 1024px) {
+    .h-title {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-us {
+      text-align: center;
+
+      &-list {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+  }
 </style>
