@@ -19,7 +19,7 @@
     },
     methods: {
       getPath(fileName) {
-        return require(`@/assets/svg/${ fileName }.svg`);
+        return require(`@/assets/svg/${ fileName }.svg`)
       }
     }
   }
@@ -82,7 +82,13 @@
 
   @media (max-width: 768px) {
     .about-us-item {
-      flex-basis: 40%;
+      flex-basis: 48%;
+      padding: 0;
+      margin-bottom: 20px;
+
+      p {
+        font-size: 16px;
+      }
     }
   }
 
