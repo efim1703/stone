@@ -19,7 +19,7 @@
     },
     methods: {
       getPath(fileName) {
-        return require(`@/assets/svg/${ fileName }.svg`);
+        return require(`@/assets/svg/${ fileName }.svg`)
       }
     }
   }
@@ -77,6 +77,40 @@
 
     p {
       font-size: 16px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-us-item {
+      flex-basis: 48%;
+      padding: 0;
+      margin-bottom: 20px;
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media (max-width: 375px) {
+    .about-us-item {
+      position: relative;
+      flex-basis: 100%;
+
+      & > * {
+        margin-bottom: 40px;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 90%;
+        right: 0;
+        left: 0;
+        height: 1px;
+        width: 100%;
+        background: white;
+      }
     }
   }
 </style>

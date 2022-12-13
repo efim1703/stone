@@ -8,7 +8,6 @@
         :card = "card"
         :key = "index"
       />
-
     </div>
   </div>
 </template>
@@ -50,7 +49,7 @@
 
 <style lang="scss" scoped>
   .about-us {
-    padding: 120px 0;
+    padding: 10% 0;
 
     &-list {
       display: flex;
@@ -65,5 +64,22 @@
     display: inline-block;
     width: 70%;
     margin-bottom: 40px;
+  }
+
+  @media (max-width: 1024px) {
+    .h-title {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-us {
+      text-align: center;
+
+      &-list {
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
   }
 </style>
