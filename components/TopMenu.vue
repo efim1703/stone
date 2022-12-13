@@ -1,5 +1,6 @@
 <template>
 <header class="top-menu">
+  <div class="background" @click="clickByBackdround" v-if="showBurgerDrawer"></div>
   <div class="container d-flex flex-column">
     <div class="top-menu--header">
       <div class="contacts d-flex">
@@ -13,17 +14,29 @@
       </div>
     </div>
     <div class="line"></div>
-    <div class="top-menu--footer">
+    <div class="top-menu--footer align-center">
       <div class="logo">
         <span>СТОЛЕШНИЦА</span>
       </div>
-      <nav class="navigation">
+      <nav :class="['navigation', { 'burger-status': isLaptoop}]" :style="showBurgerDrawer ? 'opacity: 1' : 'opacity: 0'">
         <nuxt-link to="/" active-class="active" exact>ГЛАВНАЯ</nuxt-link>
         <nuxt-link to="portfolio" active-class="active">ПОРТФОЛИО</nuxt-link>
         <nuxt-link to="catalog" active-class="active">КАТАЛОГ</nuxt-link>
         <nuxt-link to="about" active-class="active">О НАС</nuxt-link>
         <nuxt-link to="contact" active-class="active">КОНТАКТЫ</nuxt-link>
       </nav>
+      <div class="burger flex-center" @click="showBurgerDrawer = !showBurgerDrawer">
+        <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 1C5 0.447734 5.44773 0 6 0H19C19.5523 0 20 0.447734 20 1C20 1.55227 19.5523 2 19 2H6C5.44773 2 5 1.55223 5 1V1ZM19 6H1C0.447734 6 0 6.44777 0 7C0 7.55227 0.447734 8 1 8H19C19.5523 8 20 7.55227 20 7C20 6.44777 19.5523 6 19 6ZM19 12H10C9.44777 12 9 12.4477 9 13C9 13.5522 9.44777 14 10 14H19C19.5523 14 20 13.5522 20 13C20 12.4477 19.5523 12 19 12Z" fill="white"/></svg>
+      </div>
+      <div class="burger-drawer" v-if="showBurgerDrawer">
+        <nav class="navigation burger-status">
+          <nuxt-link to="/" active-class="active" exact>ГЛАВНАЯ</nuxt-link>
+          <nuxt-link to="portfolio" active-class="active">ПОРТФОЛИО</nuxt-link>
+          <nuxt-link to="catalog" active-class="active">КАТАЛОГ</nuxt-link>
+          <nuxt-link to="about" active-class="active">О НАС</nuxt-link>
+          <nuxt-link to="contact" active-class="active">КОНТАКТЫ</nuxt-link>
+        </nav>
+      </div>
     </div>
   </div>
 </header>
@@ -34,13 +47,41 @@ export default {
   name: "TopMenu",
   data() {
     return {
+      isLaptoop: false,
+      showBurgerDrawer: false
     }
   },
-
+  mounted() {
+    window.innerWidth ? this.isLaptoop = true : this.isLaptoop = false
+  },
+  watch: {
+    '$route.path'() {
+      this.showBurgerDrawer = false
+    }
+  },
+  methods: {
+    clickByBackdround() {
+      if (this.showBurgerDrawer) {
+        this.showBurgerDrawer = false
+      }
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
+.burger {
+  margin-left: auto;
+  padding: 10px;
+  z-index: 5;
+}
+.background {
+  position: fixed;
+  background: $dark;
+  opacity: 0.5;
+  width: 100vw;
+  height: 100vh;
+}
 .top-menu {
   position: absolute;
   top: 0;
@@ -101,6 +142,23 @@ export default {
         &:hover, &.active {
           color: $action;
           border-bottom: 1px solid $action;
+        }
+      }
+      &.burger-status {
+        opacity: 0;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        background: #fff;
+
+        a {
+          margin-left: 0px;
+          margin-bottom: 20px;
+          color: $dark;
         }
       }
     }

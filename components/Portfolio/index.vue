@@ -8,6 +8,7 @@
           v-for="(portfolioCard, index) in portfolioCardList"
           :key = 'index'
           :portfolioCard = 'portfolioCard'
+          class="portfolio-list-item"
         />
     </div>
   </div>
@@ -16,7 +17,7 @@
 <script>
   import PortfolioCard from "~/components/Portfolio/PortfolioCard.vue";
   export default {
-    name: 'OurPortfolio',
+    name: 'Portfolio',
     components: {PortfolioCard},
     data() {
      return {
@@ -29,7 +30,7 @@
          {
            title: 'Проект Кухни 12',
            caption: 'Богемный/модерн',
-           pictureName: 'portfolioImage1'
+           pictureName: 'portfolioImage3'
          },
          {
            title: 'Проект Кухни 12',
@@ -39,17 +40,17 @@
          {
            title: 'Проект Кухни 12',
            caption: 'Богемный/модерн',
-           pictureName: 'portfolioImage1'
+           pictureName: 'portfolioImage4'
          },
          {
            title: 'Проект Кухни 12',
            caption: 'Богемный/модерн',
-           pictureName: 'portfolioImage1'
+           pictureName: 'portfolioImage5'
          },
          {
            title: 'Проект Кухни 12',
            caption: 'Богемный/модерн',
-           pictureName: 'portfolioImage1'
+           pictureName: 'portfolioImage6'
          }
        ]
      }
@@ -71,6 +72,19 @@
       gap: 25px;
       flex-wrap: wrap;
       justify-content: space-between;
+
+      &-item {
+        width: calc(100%/3 - 50px/3);
+
+        @media (max-width: 1024px) {
+          width: calc(100%/2 - 25px/2);
+        }
+
+        @media (max-width: 768px) {
+          width: calc(100% - 50px);
+          margin: 0 auto;
+        }
+      }
     }
 
     p {

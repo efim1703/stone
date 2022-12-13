@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import AboutUsItem from "@/components/AboutUs/AboutUsItem.vue";
+  import AboutUsItem from "~/components/AboutUs/AboutUsItem.vue";
 
   export default {
     name: 'AboutUs',

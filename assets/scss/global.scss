@@ -12,13 +12,13 @@
 }
 
 .justify-center {
-  justify-center: center;
+  justify-content: center;
 }
 
 .flex-center {
   display: flex;
   align-items: center;
-  justify-center: center;
+  justify-content: center;
 }
 
 .flex-column {
@@ -35,6 +35,10 @@
 
 .full-height {
   height: 100%;
+}
+
+.opacity-zero {
+  opacity: 0;
 }
 
 .h-subtitle {

@@ -1,18 +1,18 @@
 <template>
   <div
     class="portfolio-card"
-    @mouseover="isHovering = true"
-    @mouseout="isHovering = false"
   >
-    <div
-      :class="['portfolio-card-text', { hovering: isHovering }]"
-    >
-      <h3 class="portfolio-card-text-title">{{ portfolioCard.title }}</h3>
-      <p class="portfolio-card-text-caption">{{ portfolioCard.caption }}</p>
+    <div class="portfolio-card-image">
+      <img :src="getPath(portfolioCard.pictureName)" alt="portfolio image 1">
+      <div
+          class="portfolio-card-text"
+      >
+        <h3 class="portfolio-card-text-title">{{ portfolioCard.title }}</h3>
+        <p class="portfolio-card-text-caption">{{ portfolioCard.caption }}</p>
+      </div>
     </div>
-    <div :class="['portfolio-card-image', { hovering: isHovering }]">
-      <img src="@/assets/img/portfolios/portrfolioImage1.png" alt="portfolio image 1">
-    </div>
+
+
   </div>
 </template>
 
@@ -27,32 +27,29 @@
     },
     methods: {
       getPath(fileName) {
-        console.log(require(`@/assets/img/portfolios/${fileName}.png`))
-        return require(`@/assets/img/portfolios/${fileName}.png`);
+        return `/portfolios/${fileName}.png`;
       }
     },
-    data() {
-      return {
-        isHovering: false
-      }
-    }
   }
 </script>
 
 <style lang="scss" scoped>
   .portfolio-card {
-    flex-basis: 30%;
     position: relative;
-
+    .portfolio-card:hover {
+      .portfolio-card-text {
+        opacity: 0;
+      }
+    }
     &-text {
       position: absolute;
-      top: 40%;
+      top: 50%;
+      transform: translateY(-50%);
       right: 0;
       left: 0;
-      z-index: 10;
       opacity: 0;
 
-      transition: opacity .1s ease;
+      transition: opacity .3s ease;
 
       &-title {
         font-size: 24px;
@@ -69,41 +66,27 @@
 
     &-image {
       position: relative;
-      z-index: 5;
       min-height: 190px;
 
       img {
-        position: absolute;
         height: 100%;
         width: 100%;
-        left: 0;
-        top: 0;
         object-fit: cover;
 
-        transition: all .25s ease;
+        transition: all .5s ease;
       }
     }
 
-    .hovering {
-      opacity: 1;
+    &:hover {
+      cursor: pointer;
 
-      img {
+      .portfolio-card-text {
+        opacity: 1 ;
+      }
+      .portfolio-card-image img {
         filter: brightness(40%);
       }
     }
-  }
 
-  @media (max-width: 1024px) {
-    .portfolio-card {
-      flex-basis: 45%;
-    }
   }
-
-  @media (max-width: 768px) {
-    .portfolio-card {
-      margin: 0 auto;
-      flex-basis: 95%;
-    }
-  }
-
 </style>

@@ -26,19 +26,18 @@
     </div>
     <div class="container">
       <AboutUs />
-      <OurPortfolio />
+      <Portfolio />
     </div>
   </div>
 </template>
 
 <script>
-import CustomButton from "~/components/ui/CustomButton.vue";
-import AboutUs from "~/components/AboutUs.vue";
-import OurPortfolio from "~/components/Portfolio.vue";
+import CustomButton from "@/components/ui/CustomButton.vue";
+
 
 export default {
   name: 'IndexPage',
-  components: { OurPortfolio, AboutUs, CustomButton },
+  components: { CustomButton },
   data() {
     return {
 
