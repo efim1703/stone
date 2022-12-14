@@ -1,33 +1,11 @@
 <template>
   <div class="page">
-    <div class="title-section">
-      <div class="container d-flex full-height">
-        <div class="title-section-left d-flex align-center">
-          <div class="info">
-            <div class="info-text">
-              Делаем изделия из
-              искуственного камня
-              на любой вкус
-            </div>
-            <div class="info-button">
-              <custom-button title="Расчитать стоимость" arrow>
-                <template v-slot:icon>
-                </template>
-              </custom-button>
-            </div>
-          </div>
-        </div>
-        <div class="title-section-right d-flex">
-          <img class="img first" src="@/assets/img/title-img1.png" >
-          <img class="img second" src="@/assets/img/title-img2.png" >
-          <img class="img third" src="@/assets/img/title-img3.png" >
-        </div>
-      </div>
-    </div>
+    <TitleSection />
     <div class="container">
       <AboutUs />
       <Portfolio />
     </div>
+    <EmailForm/>
   </div>
 </template>
 
@@ -48,7 +26,8 @@ export default {
 
 <style lang="scss" scoped>
 .page {
-  overflow-x: hidden;
+  overflow: hidden;
+  padding-bottom: 200px;
 
   .title-section {
     height: 764px;
