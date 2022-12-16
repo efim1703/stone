@@ -1,5 +1,5 @@
 <template>
-<button class="button d-flex align-center">
+<button :class="['button d-flex align-center', {'color-reverse': colorReverse}]">
   <span class="title">
     {{ title }}
   </span>
@@ -19,6 +19,10 @@ export default {
       default: ''
     },
     arrow: {
+      type: Boolean,
+      default: false
+    },
+    colorReverse: {
       type: Boolean,
       default: false
     }
@@ -55,5 +59,9 @@ export default {
     cursor: pointer;
     background: $action;
   }
+  &.color-reverse {
+    background: $action;
+  }
 }
+
 </style>

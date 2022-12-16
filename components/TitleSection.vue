@@ -9,10 +9,7 @@
             на любой вкус
           </div>
           <div class="info-button">
-            <custom-button title="Расчитать стоимость" arrow>
-              <template v-slot:icon>
-              </template>
-            </custom-button>
+            <custom-button title="Расчитать стоимость" arrow></custom-button>
           </div>
         </div>
       </div>

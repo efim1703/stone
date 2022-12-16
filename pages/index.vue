@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <TitleSection />
-    <div class="container">
+    <div class="container back p-relative">
       <AboutUs />
       <Portfolio />
     </div>
@@ -71,6 +71,29 @@ export default {
         }
       }
     }
+  }
+  .back {
+    &:before {
+      content: '';
+      background-image: url("@/assets/img/about-us-background2.png");
+      width: 310px;
+      height: 1216px;
+      left: -180px;
+      top: 120px;
+      position: absolute;
+      z-index: -1;
+    }
+    &:after {
+      content: '';
+      background-image: url("@/assets/img/about-us-background1.png");
+      width: 347px;
+      height: 1242px;
+      right: -200px;
+      top: 20px;
+      position: absolute;
+      z-index: -1;
+    }
+
   }
 }
 
