@@ -96,6 +96,10 @@
 
   @media (max-width: 1024px) {
     .portfolio {
+      &-list {
+        margin-top: 20px;
+      }
+
       p {
         width: 80%;
       }

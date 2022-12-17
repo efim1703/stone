@@ -66,7 +66,6 @@
 
     &-image {
       position: relative;
-      min-height: 190px;
 
       img {
         height: 100%;
