@@ -6,22 +6,21 @@
       <Portfolio />
     </div>
     <EmailForm/>
+    <div class="container">
+      <TopCards />
+    </div>
   </div>
 </template>
 
 <script>
-import CustomButton from "@/components/ui/CustomButton.vue";
+  export default {
+    name: 'IndexPage',
+    data() {
+      return {
 
-
-export default {
-  name: 'IndexPage',
-  components: { CustomButton },
-  data() {
-    return {
-
+      }
     }
   }
-}
 </script>
 
 <style lang="scss" scoped>
