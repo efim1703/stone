@@ -1,5 +1,10 @@
 <template>
-<button :class="['button d-flex align-center', {'color-reverse': colorReverse}]">
+<button
+    :class="['button d-flex align-center',
+              {'color-active': active},
+              {'text-center': textCenter}]"
+    @click="$emit('click')"
+>
   <span class="title">
     {{ title }}
   </span>
@@ -22,7 +27,11 @@ export default {
       type: Boolean,
       default: false
     },
-    colorReverse: {
+    active: {
+      type: Boolean,
+      default: false
+    },
+    textCenter: {
       type: Boolean,
       default: false
     }
@@ -39,11 +48,10 @@ export default {
   .title {
     font-weight: 800;
     align-items: center;
-    border-radius: 100px;
     font-size: 12px;
-    line-height: 2;
     text-transform: uppercase;
     letter-spacing: .05em;
+    width: 100%;
   }
   .icon {
     width: fit-content;
@@ -59,8 +67,11 @@ export default {
     cursor: pointer;
     background: $action;
   }
-  &.color-reverse {
+  &.color-active {
     background: $action;
+  }
+  &.text-center {
+    justify-content: center;
   }
 }
 

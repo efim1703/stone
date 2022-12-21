@@ -1,6 +1,7 @@
 <template>
   <div class="page">
     <TitleSection />
+    <TheCalculator/>
     <div class="container back p-relative">
       <AboutUs />
       <Portfolio />
@@ -15,12 +16,6 @@
 <script>
   export default {
     name: 'IndexPage',
-    async fetch() {
-      const data = JSON.stringify({limit:3, offset:0})
-      const response = await this.$axios.post("/api/projects/get", {limit:3, offset:0});
-      console.log(response.data.data.projects)
-      // return { response };
-    },
     data() {
       return {
         pagination: {

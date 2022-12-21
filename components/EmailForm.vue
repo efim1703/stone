@@ -7,7 +7,7 @@
     </div>
     <div class="right-block d-flex align-center">
       <input type="text" class="input" placeholder="Введите вашу почту">
-      <custom-button title="Отправить" color-reverse></custom-button>
+      <custom-button title="Отправить" active></custom-button>
     </div>
   </div>
 </div>

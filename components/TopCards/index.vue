@@ -78,10 +78,7 @@
     }
 
     &-button {
-      height: fit-content;
-      :deep(.title) {
-        width: 200px;
-      }
+
     }
 
     &-list {
