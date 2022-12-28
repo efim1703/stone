@@ -1,7 +1,4 @@
 <template>
-<!-- TODO отступ перед портфолио -->
-
-
   <div class="project">
     <div class="container">
       <div class="project-title-wrapper">
