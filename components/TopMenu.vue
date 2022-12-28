@@ -25,7 +25,7 @@
       </div>
       <nav :class="['navigation', { 'burger-status': isLaptoop}]" v-if="!isLaptoop || (isLaptoop && showBurgerDrawer)">
         <nuxt-link to="/" active-class="active" exact>ГЛАВНАЯ</nuxt-link>
-        <nuxt-link to="portfolio" active-class="active">ПОРТФОЛИО</nuxt-link>
+        <nuxt-link to="project" active-class="active">ПОРТФОЛИО</nuxt-link>
         <nuxt-link to="catalog" active-class="active">КАТАЛОГ</nuxt-link>
         <nuxt-link to="about" active-class="active">О НАС</nuxt-link>
         <nuxt-link to="contact" active-class="active">КОНТАКТЫ</nuxt-link>
@@ -40,7 +40,7 @@
 
 <script>
 export default {
-  name: "TopMenu",
+  name: 'TopMenu',
   data() {
     return {
       isLaptoop: false,

@@ -2,7 +2,7 @@
  <div class="top-cards">
    <h3 class="h-subtitle">Наш самый продаваемый продукт</h3>
    <div class="title-wrapper d-flex justify-between align-center">
-     <h2 class="h-title">Остальное вы можете посмотреть по ссылке</h2>
+     <h2 class="h2-title">Остальное вы можете посмотреть по ссылке</h2>
      <CustomButton
        class="top-cards-button"
        title="Продолжить просмотр"
@@ -21,10 +21,10 @@
 </template>
 
 <script>
-  import CustomButton from "@/components/ui/CustomButton.vue";
+  import CustomButton from '@/components/ui/CustomButton.vue';
 
   export default {
-    name: "TopCards",
+    name: 'TopCards',
     components: { CustomButton },
     data() {
       return {
@@ -72,7 +72,7 @@
     .title-wrapper {
       margin-bottom: 2%;
 
-      .h-title {
+      .h2-title {
         margin-right: 10%;
       }
     }
@@ -105,7 +105,7 @@
         justify-content: center;
         align-items: center;
 
-        .h-title {
+        .h2-title {
           width: 100%;
           margin: 0 0 2%;
         }
