@@ -1,6 +1,7 @@
 <template>
   <div class="page">
     <TitleSection />
+    <TheCalculator/>
     <div class="container back p-relative">
       <AboutUs />
       <Portfolio />
@@ -17,7 +18,10 @@
     name: 'IndexPage',
     data() {
       return {
-
+        pagination: {
+          limit: 30,
+          offset: 0
+        }
       }
     }
   }
