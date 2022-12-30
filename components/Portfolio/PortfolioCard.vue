@@ -3,7 +3,7 @@
     class="portfolio-card"
   >
     <div class="portfolio-card-image">
-      <img :src="getPath(portfolioCard.pictureName)" alt="portfolio image 1">
+      <img :src="getPath(portfolioCard.pictureName)" :alt="`portfolio image  ${ portfolioCard.id }`">
       <div
           class="portfolio-card-text"
       >

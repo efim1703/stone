@@ -1,7 +1,7 @@
 <template>
   <div class="about-us">
     <h3 class="h-subtitle">Почему выбрали именно нас</h3>
-    <h2 class="h-title">Чрезвычайно высокий стандарт удовлетворенности клиентов</h2>
+    <h2 class="h1-title">Чрезвычайно высокий стандарт удовлетворенности клиентов</h2>
     <div class="about-us-list">
       <AboutUsItem
         v-for="(card,index) in cardList"
@@ -9,12 +9,11 @@
         :key = "index"
       />
     </div>
-
   </div>
 </template>
 
 <script>
-  import AboutUsItem from "~/components/AboutUs/AboutUsItem.vue";
+  import AboutUsItem from '~/components/AboutUs/AboutUsItem.vue';
 
   export default {
     name: 'AboutUs',
@@ -41,7 +40,7 @@
             title: 'Ассортимент',
             caption: 'Мы предоставляем широкий ассортимент камня в нашем каталоге.',
             svgName: 'assortment'
-          },
+          }
         ]
       }
     }
@@ -61,14 +60,14 @@
     margin-bottom: 10px;
   }
 
-  .h-title {
+  .h1-title {
     display: inline-block;
     width: 70%;
     margin-bottom: 40px;
   }
 
   @media (max-width: 1024px) {
-    .h-title {
+    .h1-title {
       width: 100%;
     }
   }

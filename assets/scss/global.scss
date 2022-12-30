@@ -58,21 +58,28 @@
   text-transform: uppercase;
 }
 
-.h-title {
+.h2-title {
   font-style: normal;
   font-weight: 600;
   font-size: 48px;
   line-height: 60px;
-}
 
-@media (max-width:768px) {
-  .h-title {
+  @media (max-width:768px) {
     font-size: 24px;
     line-height: 30px;
   }
+}
 
-  .h-subtitle {
-    font-size: 10px;
+.h1-title {
+  font-weight: 700;
+  font-size: 40px;
+  margin-bottom: 28px;
+
+  @media (max-width:768px) {
+    text-align: center;
+ }
+
+  @media (max-width: 425px) {
+    font-size: 24px;
   }
-
 }
