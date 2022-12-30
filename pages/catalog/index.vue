@@ -14,52 +14,97 @@
             </div>
             <div class="catalog-brands">FILLER</div>
             <div class="catalog-main">
+                <dropdown-select
+                    :items-list="sortList"
+                    :title="sortTitle"
+                    @item-checked="itemChecked($event)"
+                    class="catalog-main-dropdown"
+                />
             </div>
         </div>
     </div>
 </template>
 
 <script>
-export default {
-    name: "index",
-    components: {}
+    import DropdownSelect from '@/components/ui/DropdownSelect.vue';
 
-}
+    export default {
+        name: 'index',
+        components: { DropdownSelect },
+        data() {
+            return {
+                sortList: [
+                    { id:1, name: 'По возрастанию цены', checked: false },
+                    { id:2, name: 'По убыванию цены', checked: false },
+                    { id:3, name: 'По дате', checked: false },
+                    { id:4, name: 'По популярности', checked: false },
+                ]
+            }
+        },
+        methods: {
+            clearArray(array) {
+                array.map(item => item.checked = false)
+            },
+            itemChecked(id) {
+                if (this.sortList.find( el => el.id === id).checked === true) {
+                    this.clearArray(this.sortList)
+                    return
+                }
+                this.clearArray(this.sortList)
+                this.sortList.find( el => el.id === id).checked = true
+            }
+        },
+        computed: {
+            sortTitle: function() {
+                return this.sortList.find( el => el.checked === true)?.name ?? 'Сортивка по умолчанию'
+            }
+        }
+    }
 </script>
 
 <style lang="scss" scoped>
-.catalog {
-    margin-top: 124px;
+    .catalog {
+        margin-top: 124px;
 
-    &-title {
-        width: 75%;
+        &-title {
+            width: 75%;
 
-        p {
-            margin-bottom: 28px;
+            p {
+                margin-bottom: 28px;
+
+                @media (max-width: 768px) {
+                    margin-bottom: 8px;
+                }
+            }
+
+            @media (max-width: 1024px) {
+                width: 100%;
+            }
 
             @media (max-width: 768px) {
-                margin-bottom: 8px;
+                text-align: center;
             }
         }
 
-        @media (max-width: 1024px) {
+        &-brands {
+            background: red;
+            height: 102px;
             width: 100%;
+            margin-bottom: 28px;
+
+            @media (max-width: 768px) {
+                margin-bottom: 12px;
+            }
+        }
+
+        &-main {
+            &-dropdown {
+                float: right;
+            }
         }
 
         @media (max-width: 768px) {
-            text-align: center;
+            margin-top: 152px;
         }
     }
-
-    &-brands {
-        background: red;
-        height: 102px;
-        width: 100%;
-        margin-bottom: 28px;
-
-        @media (max-width: 768px) {
-            margin-bottom: 12px;
-        }
-    }
-}
 </style>

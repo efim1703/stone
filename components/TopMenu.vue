@@ -49,156 +49,156 @@
 </template>
 
 <script>
-export default {
-    name: 'TopMenu',
-    data() {
-        return {
-            isLaptoop: false,
-            showBurgerDrawer: false
-        }
-    },
-    mounted() {
-        window.innerWidth <= 1024 ? this.isLaptoop = true : this.isLaptoop = false
-    },
-    watch: {
-        '$route.path'() {
-            this.showBurgerDrawer = false
-        }
-    },
-    methods: {
-        clickByBackdround() {
-            if (this.showBurgerDrawer) {
+    export default {
+        name: 'TopMenu',
+        data() {
+            return {
+                isLaptoop: false,
+                showBurgerDrawer: false
+            }
+        },
+        mounted() {
+            window.innerWidth <= 1024 ? this.isLaptoop = true : this.isLaptoop = false
+        },
+        watch: {
+            '$route.path'() {
                 this.showBurgerDrawer = false
+            }
+        },
+        methods: {
+            clickByBackdround() {
+                if (this.showBurgerDrawer) {
+                    this.showBurgerDrawer = false
+                }
             }
         }
     }
-}
 </script>
 
 <style lang="scss" scoped>
 
-.top-menu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 84px;
-    width: 100%;
-    font-size: 14px;
-    font-weight: 300;
-    z-index: 10;
-
-    &--header {
+    .top-menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 84px;
         width: 100%;
+        font-size: 14px;
+        font-weight: 300;
+        z-index: 10;
 
-        .contacts {
-            justify-content: end;
-            margin: 12px 0;
+        &--header {
+            width: 100%;
 
-            &__block {
-                margin-left: 16px;
+            .contacts {
+                justify-content: end;
+                margin: 12px 0;
 
-                a {
-                    font-size: 12px;
+                &__block {
+                    margin-left: 16px;
+
+                    a {
+                        font-size: 12px;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    .icon {
+                        margin-right: 8px;
+
+                        svg {
+                            width: 12px;
+                            height: 12px;
+                        }
+                    }
                 }
+            }
 
-                &:hover {
-                    cursor: pointer;
-                }
+            @media (max-width: 425px) {
+                .contacts {
+                    flex-direction: column;
+                    align-items: center;
 
-                .icon {
-                    margin-right: 8px;
-
-                    svg {
-                        width: 12px;
-                        height: 12px;
+                    > &__block {
+                        margin: 0 0 8px 0;
                     }
                 }
             }
         }
 
-        @media (max-width: 425px) {
-            .contacts {
-                flex-direction: column;
-                align-items: center;
-
-                > &__block {
-                    margin: 0 0 8px 0;
-                }
-            }
-        }
-    }
-
-    .line {
-        position: absolute;
-        top: 38px;
-        left: 0;
-        height: 1px;
-        width: 100%;
-        background: $light;
-    }
-
-    @media (max-width: 425px) {
         .line {
-            top: 58px;
+            position: absolute;
+            top: 38px;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            background: $light;
         }
-    }
 
-    &--footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 20px;
-
-        .logo {
-            span {
-                letter-spacing: 0.1em;
+        @media (max-width: 425px) {
+            .line {
+                top: 58px;
             }
         }
 
-        .navigation {
-            a {
-                letter-spacing: 0.1em;
-                margin-left: 24px;
-                padding-bottom: 3px;
-                border-bottom: 1px solid transparent;
+        &--footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
 
-                &:hover, &.active {
-                    color: $action;
-                    border-bottom: 1px solid $action;
+            .logo {
+                span {
+                    letter-spacing: 0.1em;
                 }
             }
 
-            &.burger-status {
-                position: absolute;
-                top: 100px;
-                right: 0;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                padding: 30px;
-                background: #fff;
-
+            .navigation {
                 a {
-                    margin-left: 0px;
-                    margin-bottom: 20px;
-                    color: $dark;
+                    letter-spacing: 0.1em;
+                    margin-left: 24px;
+                    padding-bottom: 3px;
+                    border-bottom: 1px solid transparent;
+
+                    &:hover, &.active {
+                        color: $action;
+                        border-bottom: 1px solid $action;
+                    }
+                }
+
+                &.burger-status {
+                    position: absolute;
+                    top: 100px;
+                    right: 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 30px;
+                    background: #fff;
+
+                    a {
+                        margin-left: 0px;
+                        margin-bottom: 20px;
+                        color: $dark;
+                    }
                 }
             }
-        }
 
-        .burger {
-            margin-left: auto;
-            padding: 10px;
-            z-index: 5;
+            .burger {
+                margin-left: auto;
+                padding: 10px;
+                z-index: 5;
+            }
         }
     }
-}
 
-.background {
-    position: absolute;
-    background: $dark;
-    opacity: 0.7;
-    width: 100vw;
-    height: 100vh;
-}
+    .background {
+        position: absolute;
+        background: $dark;
+        opacity: 0.7;
+        width: 100vw;
+        height: 100vh;
+    }
 </style>
