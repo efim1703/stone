@@ -3,7 +3,7 @@
     <div class="container d-flex full-height">
       <div class="title-section-left d-flex align-center">
         <div class="info">
-          <div class="info-text">
+          <div class="h1-title">
             Делаем изделия из
             искуственного камня
             на любой вкус
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import CustomButton from "@/components/ui/CustomButton.vue";
+import CustomButton from '@/components/ui/CustomButton.vue';
 
 
 export default {
