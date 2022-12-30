@@ -1,85 +1,85 @@
 <template>
-  <div class="about-us">
-    <h3 class="h-subtitle">Почему выбрали именно нас</h3>
-    <h2 class="h1-title">Чрезвычайно высокий стандарт удовлетворенности клиентов</h2>
-    <div class="about-us-list">
-      <AboutUsItem
-        v-for="(card,index) in cardList"
-        :card = "card"
-        :key = "index"
-      />
+    <div class="about-us">
+        <h3 class="h-subtitle">Почему выбрали именно нас</h3>
+        <h2 class="h1-title">Чрезвычайно высокий стандарт удовлетворенности клиентов</h2>
+        <div class="about-us-list">
+            <AboutUsItem
+                v-for="(card,index) in cardList"
+                :card="card"
+                :key="index"
+            />
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
-  import AboutUsItem from '~/components/AboutUs/AboutUsItem.vue';
+import AboutUsItem from '~/components/AboutUs/AboutUsItem.vue';
 
-  export default {
+export default {
     name: 'AboutUs',
-    components: { AboutUsItem },
+    components: {AboutUsItem},
     data() {
-      return {
-        cardList: [
-          {
-            title: 'Полный сервис',
-            caption: 'Выполняем выезды на замеры: изготовку, доставку и установку изделий',
-            svgName: 'table'
-          },
-          {
-            title: '>20 лет',
-            caption: 'Наша компания в большом бизнесе больше 20 лет',
-            svgName: 'age'
-          },
-          {
-            title: 'Гарантия',
-            caption: 'Гарантия качества нашего товара 1 год.',
-            svgName: 'garant'
-          },
-          {
-            title: 'Ассортимент',
-            caption: 'Мы предоставляем широкий ассортимент камня в нашем каталоге.',
-            svgName: 'assortment'
-          }
-        ]
-      }
+        return {
+            cardList: [
+                {
+                    title: 'Полный сервис',
+                    caption: 'Выполняем выезды на замеры: изготовку, доставку и установку изделий',
+                    svgName: 'table'
+                },
+                {
+                    title: '>20 лет',
+                    caption: 'Наша компания в большом бизнесе больше 20 лет',
+                    svgName: 'age'
+                },
+                {
+                    title: 'Гарантия',
+                    caption: 'Гарантия качества нашего товара 1 год.',
+                    svgName: 'garant'
+                },
+                {
+                    title: 'Ассортимент',
+                    caption: 'Мы предоставляем широкий ассортимент камня в нашем каталоге.',
+                    svgName: 'assortment'
+                }
+            ]
+        }
     }
-  }
+}
 </script>
 
 <style lang="scss" scoped>
-  .about-us {
+.about-us {
     padding: 10% 0;
 
     &-list {
-      display: flex;
+        display: flex;
     }
-  }
+}
 
-  .h-subtitle {
+.h-subtitle {
     margin-bottom: 10px;
-  }
+}
 
-  .h1-title {
+.h1-title {
     display: inline-block;
     width: 70%;
     margin-bottom: 40px;
-  }
+}
 
-  @media (max-width: 1024px) {
+@media (max-width: 1024px) {
     .h1-title {
-      width: 100%;
+        width: 100%;
     }
-  }
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .about-us {
-      text-align: center;
+        text-align: center;
 
-      &-list {
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
+        &-list {
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
     }
-  }
+}
 </style>
