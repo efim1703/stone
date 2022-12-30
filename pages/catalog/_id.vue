@@ -1,12 +1,11 @@
 <template>
-<div>
-  ID {{ $route.params.id }}
-</div>
+    <div>
+        ID {{ $route.params.id }}
+    </div>
 </template>
 
 <script>
-export default {
-}
+export default {}
 </script>
 
 <style scoped>
