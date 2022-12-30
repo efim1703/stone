@@ -1,5 +1,5 @@
-<template>
-    <div class="wrapper">
+<!--<template>-->
+<!--    <div class="wrapper">-->
         <div class="container">
             <h3 class="h-subtitle">Калькултяор</h3>
             <h2 class="h-title">Рассчитайте стоимость ваего изделия из искусственного камня</h2>
@@ -16,13 +16,26 @@
                             :title="name"
                             text-center
                             :active="numberFormIsActive === index + 1"
-                            @click="numberFormIsActive = index + 1"
+                            @click="changeType(index + 1)"
                         />
                     </div>
                 </div>
                 <div class="body d-flex ">
                     <div class="body-img">
                         <img :src="require(`@/assets/svg/calculator${ numberFormIsActive }.svg`)" width="100%">
+                    </div>
+                    <div class="body-inputs d-flex flex-column align-center" v-if="step">
+                        <span>Укажите размеры (в мм)</span>
+                        <div class="input-list d-flex">
+                            <InputSize
+                                v-for="(item, index) of getActiveInputSizeList"
+                                :key="index"
+                                :title="item.title"
+                                @input="item.value = $event"
+                                :value="item.value"
+                                class="input-list-item"
+                            />
+                        </div>
                     </div>
                     <div class="body-inputs d-flex flex-column align-center">
                         <span>Укажите размеры (в мм)</span>
@@ -82,12 +95,13 @@ export default {
     computed: {
       getActiveInputSizeList() {
           const activeArr = 'inputSizeList' + this.numberFormIsActive
-          console.log(activeArr)
           return this[activeArr]
       }
     },
     methods: {
-
+        changeType(numberType) {
+            this.numberFormIsActive = numberType
+        }
     }
 }
 </script>
