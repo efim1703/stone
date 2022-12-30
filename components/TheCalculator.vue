@@ -1,5 +1,5 @@
-<!--<template>-->
-<!--    <div class="wrapper">-->
+<template>
+    <div class="wrapper">
         <div class="container">
             <h3 class="h-subtitle">Калькултяор</h3>
             <h2 class="h-title">Рассчитайте стоимость ваего изделия из искусственного камня</h2>
@@ -24,7 +24,7 @@
                     <div class="body-img">
                         <img :src="require(`@/assets/svg/calculator${ numberFormIsActive }.svg`)" width="100%">
                     </div>
-                    <div class="body-inputs d-flex flex-column align-center" v-if="step">
+                    <div class="body-inputs d-flex flex-column align-center" v-if="true">
                         <span>Укажите размеры (в мм)</span>
                         <div class="input-list d-flex">
                             <InputSize
@@ -37,7 +37,7 @@
                             />
                         </div>
                     </div>
-                    <div class="body-inputs d-flex flex-column align-center">
+                    <div class="body-inputs d-flex flex-column align-center" v-else>
                         <span>Укажите размеры (в мм)</span>
                         <div class="input-list d-flex">
                             <InputSize
