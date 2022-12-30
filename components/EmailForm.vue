@@ -71,6 +71,7 @@ export default {
   }
 
 }
+
 @media (max-width: 1024px) {
   .wrapper {
     height: fit-content;
