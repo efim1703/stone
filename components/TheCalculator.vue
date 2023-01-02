@@ -57,114 +57,114 @@
 </template>
 
 <script>
-import CustomButton from "@/components/ui/CustomButton.vue";
-import InputSize from "@/components/ui/InputSize.vue";
+    import CustomButton from "@/components/ui/CustomButton.vue";
+    import InputSize from "@/components/ui/InputSize.vue";
 
-export default {
-    name: "TheCalculator",
-    components: {CustomButton, InputSize},
-    data() {
-        return {
-            typeNames: [
-                'ПРЯМАЯ',
-                'Г-ОБРАЗНАЯ',
-                'П-ОБРАЗНАЯ',
-            ],
-            numberFormIsActive: 1,
-            inputSizeList1: [
-                { title: 'Сторона А', value: 600 },
-                { title: 'Сторона B', value: 3000 },
-            ],
-            inputSizeList2: [
-                { title: 'Сторона А', value: 1000 },
-                { title: 'Сторона B', value: 3000 },
-                { title: 'Сторона C', value: 600 },
-                { title: 'Сторона D', value: 600 },
-            ],
-            inputSizeList3: [
-                { title: 'Сторона А', value: 1000 },
-                { title: 'Сторона B', value: 3000 },
-                { title: 'Сторона C', value: 2000 },
-                { title: 'Сторона D', value: 1800 },
-                { title: 'Сторона F', value: 600 },
-                { title: 'Сторона E', value: 600 },
-                { title: 'Глубина столешницы', value: 600 },
-            ]
-        }
-    },
-    computed: {
-      getActiveInputSizeList() {
-          const activeArr = 'inputSizeList' + this.numberFormIsActive
-          return this[activeArr]
-      }
-    },
-    methods: {
-        changeType(numberType) {
-            this.numberFormIsActive = numberType
+    export default {
+        name: 'TheCalculator',
+        components: { CustomButton, InputSize },
+        data() {
+            return {
+                typeNames: [
+                    'ПРЯМАЯ',
+                    'Г-ОБРАЗНАЯ',
+                    'П-ОБРАЗНАЯ',
+                ],
+                numberFormIsActive: 1,
+                inputSizeList1: [
+                    { title: 'Сторона А', value: 600 },
+                    { title: 'Сторона B', value: 3000 },
+                ],
+                inputSizeList2: [
+                    { title: 'Сторона А', value: 1000 },
+                    { title: 'Сторона B', value: 3000 },
+                    { title: 'Сторона C', value: 600 },
+                    { title: 'Сторона D', value: 600 },
+                ],
+                inputSizeList3: [
+                    { title: 'Сторона А', value: 1000 },
+                    { title: 'Сторона B', value: 3000 },
+                    { title: 'Сторона C', value: 2000 },
+                    { title: 'Сторона D', value: 1800 },
+                    { title: 'Сторона F', value: 600 },
+                    { title: 'Сторона E', value: 600 },
+                    { title: 'Глубина столешницы', value: 600 },
+                ]
+            }
+        },
+        computed: {
+          getActiveInputSizeList() {
+              const activeArr = 'inputSizeList' + this.numberFormIsActive
+              return this[activeArr]
+          }
+        },
+        methods: {
+            changeType(numberType) {
+                this.numberFormIsActive = numberType
+            }
         }
     }
-}
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
-    .calculator {
-        width: 100%;
-
-        .header {
+    .wrapper {
+        .calculator {
             width: 100%;
-            margin-top: 60px;
 
-            &-title {
-                font-weight: 600;
-                font-size: 30px;
-            }
+            .header {
+                width: 100%;
+                margin-top: 60px;
 
-            &-radio {
-                margin: 40px 0 60px;
-
-                .radio-btn {
-                    width: calc(100% / 3 - 4px / 3);
-                    border-radius: 0px;
-                    text-align: center;
-                }
-            }
-        }
-
-        .body {
-            &-img {
-                width: 50%;
-            }
-
-            &-inputs {
-                width: 50%;
-
-                span {
-                    font-size: 20px;
-                    font-weight: 700;
+                &-title {
+                    font-weight: 600;
+                    font-size: 30px;
                 }
 
-                .input-list {
-                    width: 100%;
-                    margin-top: 16px;
-                    flex-wrap: wrap;
+                &-radio {
+                    margin: 40px 0 60px;
 
-                    &-item {
-                        flex: 1 1 calc(100%/2);
+                    .radio-btn {
+                        width: calc(100% / 3 - 4px / 3);
+                        border-radius: 0px;
                         text-align: center;
-                        margin-bottom: 8px;
+                    }
+                }
+            }
+
+            .body {
+                &-img {
+                    width: 50%;
+                }
+
+                &-inputs {
+                    width: 50%;
+
+                    span {
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+
+                    .input-list {
+                        width: 100%;
+                        margin-top: 16px;
+                        flex-wrap: wrap;
+
+                        &-item {
+                            flex: 1 1 calc(100%/2);
+                            text-align: center;
+                            margin-bottom: 8px;
+                        }
                     }
                 }
             }
         }
-    }
 
-    .container {
-        margin: 120px auto 100px;
-    }
+        .container {
+            margin: 120px auto 100px;
+        }
 
-    .h-subtitle {
-        margin-bottom: 10px;
+        .h-subtitle {
+            margin-bottom: 10px;
+        }
     }
-}
 </style>

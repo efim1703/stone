@@ -8,56 +8,56 @@
 </template>
 
 <script>
-import CustomButton from '~/components/ui/CustomButton';
+    import CustomButton from '@/components/ui/CustomButton.vue';
 
-export default {
-    name: 'Card',
-    components: {CustomButton},
-    props: {
-        project: {
-            type: Object,
-            required: true
-        },
+    export default {
+        name: 'Card',
+        components: { CustomButton },
+        props: {
+            project: {
+                type: Object,
+                required: true
+            },
+        }
     }
-}
 </script>
 
 <style lang="scss" scoped>
-.project {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    img {
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        margin-bottom: 32px;
-    }
-
-    h3 {
-        margin-bottom: 16px;
-    }
-
-    p {
-        margin-bottom: 16px;
-    }
-}
-
-@media (max-width: 768px) {
     .project {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
         img {
-            margin-bottom: 12px;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            margin-bottom: 32px;
         }
 
         h3 {
-            margin-bottom: 8px;
+            margin-bottom: 16px;
         }
 
         p {
             margin-bottom: 16px;
         }
     }
-}
+
+    @media (max-width: 768px) {
+        .project {
+            img {
+                margin-bottom: 12px;
+            }
+
+            h3 {
+                margin-bottom: 8px;
+            }
+
+            p {
+                margin-bottom: 16px;
+            }
+        }
+    }
 </style>

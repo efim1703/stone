@@ -13,73 +13,73 @@
 </template>
 
 <script>
-import AboutUsItem from '~/components/AboutUs/AboutUsItem.vue';
+    import AboutUsItem from '@/components/AboutUs/AboutUsItem.vue';
 
-export default {
-    name: 'AboutUs',
-    components: {AboutUsItem},
-    data() {
-        return {
-            cardList: [
-                {
-                    title: 'Полный сервис',
-                    caption: 'Выполняем выезды на замеры: изготовку, доставку и установку изделий',
-                    svgName: 'table'
-                },
-                {
-                    title: '>20 лет',
-                    caption: 'Наша компания в большом бизнесе больше 20 лет',
-                    svgName: 'age'
-                },
-                {
-                    title: 'Гарантия',
-                    caption: 'Гарантия качества нашего товара 1 год.',
-                    svgName: 'garant'
-                },
-                {
-                    title: 'Ассортимент',
-                    caption: 'Мы предоставляем широкий ассортимент камня в нашем каталоге.',
-                    svgName: 'assortment'
-                }
-            ]
+    export default {
+        name: 'AboutUs',
+        components: { AboutUsItem },
+        data() {
+            return {
+                cardList: [
+                    {
+                        title: 'Полный сервис',
+                        caption: 'Выполняем выезды на замеры: изготовку, доставку и установку изделий',
+                        svgName: 'table'
+                    },
+                    {
+                        title: '>20 лет',
+                        caption: 'Наша компания в большом бизнесе больше 20 лет',
+                        svgName: 'age'
+                    },
+                    {
+                        title: 'Гарантия',
+                        caption: 'Гарантия качества нашего товара 1 год.',
+                        svgName: 'garant'
+                    },
+                    {
+                        title: 'Ассортимент',
+                        caption: 'Мы предоставляем широкий ассортимент камня в нашем каталоге.',
+                        svgName: 'assortment'
+                    }
+                ]
+            }
         }
     }
-}
 </script>
 
 <style lang="scss" scoped>
-.about-us {
-    padding: 10% 0;
-
-    &-list {
-        display: flex;
-    }
-}
-
-.h-subtitle {
-    margin-bottom: 10px;
-}
-
-.h1-title {
-    display: inline-block;
-    width: 70%;
-    margin-bottom: 40px;
-}
-
-@media (max-width: 1024px) {
-    .h1-title {
-        width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
     .about-us {
-        text-align: center;
+        padding: 10% 0;
 
         &-list {
-            flex-wrap: wrap;
-            justify-content: space-between;
+            display: flex;
         }
     }
-}
+
+    .h-subtitle {
+        margin-bottom: 10px;
+    }
+
+    .h1-title {
+        display: inline-block;
+        width: 70%;
+        margin-bottom: 40px;
+    }
+
+    @media (max-width: 1024px) {
+        .h1-title {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .about-us {
+            text-align: center;
+
+            &-list {
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+        }
+    }
 </style>
