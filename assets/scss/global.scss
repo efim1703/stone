@@ -89,3 +89,11 @@
         font-size: 24px;
     }
 }
+
+.fade-enter-active {
+    transition: opacity .25s;
+}
+
+.fade-enter {
+    opacity: 0;
+}

@@ -22,7 +22,7 @@
 </template>
 
 <script>
-    import AppCheckbox from '~/components/ui/AppCheckbox.vue';
+    import AppCheckbox from '@/components/ui/AppCheckbox.vue';
 
     export default {
         name: 'DropdownCheckbox',
@@ -49,24 +49,26 @@
     @import '@/assets/scss/variables.scss';
 
     .dropdown {
-        cursor: pointer;
         display: flex;
         align-items: flex-start;
         flex-direction: column;
+        margin-bottom: 12px;
+        cursor: pointer;
 
         &-title {
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: space-between;
+            width: 100%;
             margin-bottom: 10px;
         }
 
         p {
-            font-family: 'Plus Jakarta Sans';
-            font-weight: 800;
-            font-size: 12px;
-            line-height: 15px;
-            text-transform: uppercase;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 25px;
         }
 
         svg {
@@ -79,20 +81,17 @@
     }
 
     .sub-menu {
+        margin-left: 40px;
+
         &-item:not(:last-child) {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
             margin-bottom: 10px;
         }
 
         @media (max-width: 768px) {
             font-size: 14px;
         }
-    }
-
-    .fade-enter-active {
-        transition: opacity .5s;
-    }
-
-    .fade-enter {
-        opacity: 0;
     }
 </style>

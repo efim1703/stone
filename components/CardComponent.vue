@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <img :src="require(`@/assets/img/cards/${ card.imageName }.png`)" :alt="`${ card.id } card image`">
+        <img :src="require(`@/assets/img/cards/${ card.imageName }.png`)" alt="Изображение материала">
         <div class="card-rating d-flex justify-center">
             <img
                 v-for="rating in card.rating"
