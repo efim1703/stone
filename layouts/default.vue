@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <TopMenu />
+    <div>
+        <TopMenu/>
 
-    <Nuxt />
-  </div>
+        <Nuxt/>
+
+        <LeftPopup/>
+    </div>
 </template>

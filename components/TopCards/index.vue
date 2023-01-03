@@ -10,7 +10,7 @@
             />
         </div>
         <div class="top-cards-list d-flex justify-between">
-            <CardComponent
+            <MeterialCard
                 v-for="card in topCardsList"
                 :key="card.index"
                 :card="card"

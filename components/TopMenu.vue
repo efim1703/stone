@@ -49,16 +49,18 @@
 </template>
 
 <script>
+    import customBreakpoint from '@/mixins/customBreakpoint'
     export default {
         name: 'TopMenu',
+        mixins: [customBreakpoint],
         data() {
             return {
-                isLaptoop: false,
+                // isLaptoop: false,
                 showBurgerDrawer: false
             }
         },
         mounted() {
-            window.innerWidth <= 1024 ? this.isLaptoop = true : this.isLaptoop = false
+            // window.innerWidth <= 1024 ? this.isLaptoop = true : this.isLaptoop = false
         },
         watch: {
             '$route.path'() {

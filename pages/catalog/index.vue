@@ -42,7 +42,7 @@
 <!--                        />-->
                     </div>
                     <div class="catalog-main-body-list">
-                        <card-component
+                        <MeterialCard
                             v-for="card in cardList"
                             :key="card.id"
                             :card="card"
@@ -253,6 +253,7 @@
             &-dropdown {
                 margin-bottom: 24px;
                 align-self: flex-end;
+                z-index: 5;
             }
 
             &-body {
