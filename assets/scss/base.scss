@@ -5,7 +5,7 @@
     margin: 0;
 }
 
-//todo: скролл скрыть
+// todo: скролл скрыть
 body {
     box-sizing: border-box;
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -22,6 +22,7 @@ a:active {
 button,
 button:active,
 button:hover {
+    box-sizing: border-box;
     font-family: 'Plus Jakarta Sans';
     text-decoration: none;
     border: none;
@@ -32,6 +33,7 @@ input,
 input:active,
 input:hover,
 input:focus {
+    box-sizing: border-box;
     font-family: 'Plus Jakarta Sans';
     text-decoration: none;
     outline: none;

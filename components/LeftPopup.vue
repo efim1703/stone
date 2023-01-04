@@ -27,10 +27,15 @@
         watch: {
             getAnimationCalculator(val) {
                 this.isAnimation = val
+                if (val) {
+                    setTimeout(() => {
+                        this.offAnimationCalculator()
+                    }, 1600)
+                }
             }
         },
         methods: {
-            ...mapActions(['addFavoriteMaterial', 'removeFavoriteMaterial']),
+            ...mapActions(['addFavoriteMaterial', 'removeFavoriteMaterial', 'offAnimationCalculator']),
         }
     }
 </script>

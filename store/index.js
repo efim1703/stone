@@ -22,6 +22,7 @@ export const actions = {
     addFavoriteMaterial({ state, commit }, newMaterial) {
         const newList = [...state.favoritesList]
         newList.push(newMaterial)
+
         commit('setFavoritesList', newList)
 
         commit('setAnimationCalculator', true)
@@ -29,10 +30,8 @@ export const actions = {
     removeFavoriteMaterial({ state, commit }, material) {
         const newList = state.favoritesList.filter(({id}) => id !== material.id)
         commit('setFavoritesList', newList)
-
-        commit('setAnimationCalculator', false)
     },
     offAnimationCalculator({ commit }) {
-        commit('offAnimationCalculator', false)
+        commit('setAnimationCalculator', false)
     }
 }

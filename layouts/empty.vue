@@ -1,15 +1,12 @@
 <template>
     <div class="background">
-        <TopMenu/>
-
-        <Nuxt/>
-
-        <LeftPopup/>
+        <Nuxt />
     </div>
 </template>
 
+
 <style lang="scss" scoped>
 .background {
-    background: $dark;
+    background: $admin-light;
 }
 </style>

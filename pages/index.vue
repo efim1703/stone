@@ -1,69 +1,73 @@
 <template>
-  <div class="page">
-    <TitleSection />
-    <TheCalculator/>
-    <div class="container back p-relative">
-      <AboutUs />
-      <Portfolio />
+    <div class="page">
+        <TitleSection/>
+        <TheCalculator/>
+        <div class="container back p-relative">
+            <AboutUs class="p-relative z-index-1"/>
+            <Portfolio class="p-relative z-index-1"/>
+        </div>
+        <EmailForm/>
+        <div class="container">
+            <TopCards/>
+        </div>
     </div>
-    <EmailForm/>
-    <div class="container">
-      <TopCards />
-    </div>
-  </div>
 </template>
 
 <script>
-  export default {
+export default {
     name: 'IndexPage',
     data() {
-      return {
-        pagination: {
-          limit: 30,
-          offset: 0
+        return {
+            pagination: {
+                limit: 30,
+                offset: 0
+            }
         }
-      }
     }
-  }
+}
 </script>
 
 <style lang="scss" scoped>
 .page {
-  overflow: hidden;
-  padding-bottom: 200px;
+    overflow: hidden;
+    padding-bottom: 200px;
 
-  .title-section {
-    height: 764px;
-    background: linear-gradient(0deg, rgba(35, 38, 45, 0.9), rgba(35, 38, 45, 0.9)), url('@/assets/img/background.jpg');
-    backdrop-filter: blur(5px);
-    padding-top: 84px;
+    .title-section {
+        height: 764px;
+        background: linear-gradient(0deg, rgba(35, 38, 45, 0.9), rgba(35, 38, 45, 0.9)), url('@/assets/img/background.jpg');
+        backdrop-filter: blur(5px);
+        padding-top: 84px;
 
-    &-left {
-      width: 40%;
-      height: 100%;
-      .info-text {
-          font-weight: 700;
-          font-size: 40px;
-          margin-bottom: 28px;
+        &-left {
+            width: 40%;
+            height: 100%;
+
+            .info-text {
+                font-weight: 700;
+                font-size: 40px;
+                margin-bottom: 28px;
+            }
         }
-    }
-    &-right {
-      width: 60%;
-      height: 100%;
 
-      .img {
-        background-size: cover;
-        &.first {
-          margin: auto auto -64px -160px;
-          width: calc(1038px * 0.8);
-          height: calc(950px * 0.8);
-          animation: first-img  2s;
-        }
-        &.second {
-          margin: auto auto 160px -328px;
-          width: calc(641px * 0.7);
-          height: calc(556px * 0.7);
-          animation: second-img 2.5s ;
+        &-right {
+            width: 60%;
+            height: 100%;
+
+            .img {
+                background-size: cover;
+
+                &.first {
+                    margin: auto auto -64px -160px;
+                    width: calc(1038px * 0.8);
+                    height: calc(950px * 0.8);
+                    animation: first-img 2s;
+                }
+
+                &.second {
+                    margin: auto auto 160px -328px;
+                    width: calc(641px * 0.7);
+                    height: calc(556px * 0.7);
+                    animation: second-img 2.5s;
 
                 }
 
@@ -86,7 +90,6 @@
             left: -180px;
             top: 120px;
             position: absolute;
-            z-index: -1;
         }
 
         &:after {
@@ -97,7 +100,6 @@
             right: -200px;
             top: 20px;
             position: absolute;
-            z-index: -1;
         }
 
     }
