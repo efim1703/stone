@@ -13,42 +13,35 @@
                 <p>Вы можете заказать изделие из материала или приобрести листы искусственного камня.</p>
             </div>
             <div class="catalog-brands">FILLER</div>
-            <div class="catalog-main">
+            <div class="catalog-sort">
+                <custom-button
+                    @click="isTable=!isTable"
+                    title="Фильтр"
+                    class="catalog-sort-button"
+                />
                 <dropdown-select
                     :items-list="sortList"
                     :title="sortTitle"
                     @item-checked="itemChecked($event)"
-                    class="catalog-main-dropdown"
+                    class="catalog-sort-dropdown"
                 />
-                <div class="catalog-main-body">
-                    <div class="catalog-main-body-filters">
-                        <dropdown-checkbox
-                            v-for="item in checkboxList"
-                            :key="item.id"
-                            :title="item.title"
-                            :items-list="item.list"
-                        />
-<!--                        <dropdown-checkbox-->
-<!--                            title="Раздел"-->
-<!--                            :items-list="sectionList"-->
-<!--                        />-->
-<!--                        <dropdown-checkbox-->
-<!--                            title="Бренд"-->
-<!--                            :items-list="brandList"-->
-<!--                        />-->
-<!--                        <dropdown-checkbox-->
-<!--                            title="Страна"-->
-<!--                            :items-list="countryList"-->
-<!--                        />-->
-                    </div>
-                    <div class="catalog-main-body-list">
-                        <MeterialCard
-                            v-for="card in cardList"
-                            :key="card.id"
-                            :card="card"
-                            class="catalog-main-body-list-item"
-                        />
-                    </div>
+            </div>
+            <div class="catalog-body">
+                <div v-if="isTable" class="catalog-body-filters">
+                    <dropdown-checkbox
+                        v-for="item in checkboxList"
+                        :key="item.id"
+                        :title="item.title"
+                        :items-list="item.list"
+                    />
+                </div>
+                <div class="catalog-body-list">
+                    <MeterialCard
+                        v-for="card in cardList"
+                        :key="card.id"
+                        :card="card"
+                        class="catalog-body-list-item"
+                    />
                 </div>
             </div>
         </div>
@@ -57,69 +50,61 @@
 
 <script>
     import DropdownSelect from '@/components/ui/DropdownSelect.vue';
-    import DropdownCheckbox from "~/components/ui/DropdownCheckbox";
-    import AppRadio from "~/components/ui/AppRadio";
+    import DropdownCheckbox from "@/components/ui/DropdownCheckbox.vue";
+    import AppRadio from "@/components/ui/AppRadio.vue";
+    import CustomButton from "@/components/ui/CustomButton";
+    import customBreakpoint from '@/mixins/customBreakpoint'
 
     export default {
         name: 'index',
-        components: {AppRadio, DropdownCheckbox, DropdownSelect },
+        components: {CustomButton, AppRadio, DropdownCheckbox, DropdownSelect},
+        mixins: [ customBreakpoint ],
         data() {
             return {
+                isOpen: false,
                 sortList: [
-                    { id: 1, name: 'по возрастанию цены', checked: false },
-                    { id: 2, name: 'по убыванию цены', checked: false },
-                    { id: 3, name: 'по дате', checked: false },
-                    { id: 4, name: 'по популярности', checked: false },
+                    {id: 1, name: 'по возрастанию цены', checked: false},
+                    {id: 2, name: 'по убыванию цены', checked: false},
+                    {id: 3, name: 'по дате', checked: false},
+                    {id: 4, name: 'по популярности', checked: false},
                 ],
                 checkboxList: [
                     {
                         id: 1,
-                        title:'Раздел',
+                        title: 'Раздел',
                         list: [
-                            { id: 1, name: 'Раздел 1', checked: false },
-                            { id: 2, name: 'Раздел 2', checked: false },
-                            { id: 3, name: 'Раздел 3', checked: false },
-                            { id: 4, name: 'Раздел 4', checked: false },
+                            {id: 1, name: 'Раздел 1', checked: false},
+                            {id: 2, name: 'Раздел 2', checked: false},
+                            {id: 3, name: 'Раздел 3', checked: false},
+                            {id: 4, name: 'Раздел 4', checked: false},
                         ]
                     },
                     {
                         id: 2,
-                        title:'Бренд',
+                        title: 'Бренд',
                         list: [
-                            { id: 5, name: 'Бренд 1', checked: false },
-                            { id: 6, name: 'Бренд 2', checked: false },
-                            { id: 7, name: 'Бренд 3', checked: false },
-                            { id: 8, name: 'Бренд 4', checked: false },
+                            {id: 5, name: 'Бренд 1', checked: false},
+                            {id: 6, name: 'Бренд 2', checked: false},
+                            {id: 7, name: 'Бренд 3', checked: false},
+                            {id: 8, name: 'Бренд 4', checked: false},
                         ]
                     },
                     {
                         id: 3,
-                        title:'Страна',
+                        title: 'Страна',
                         list: [
-                            { id: 9, name: 'Страна 1', checked: false },
-                            { id: 10, name: 'Страна 2', checked: false },
-                            { id: 11, name: 'Страна 3', checked: false },
-                            { id: 12, name: 'Страна 4', checked: false },
+                            {id: 9, name: 'Страна 1', checked: false},
+                            {id: 10, name: 'Страна 2', checked: false},
+                            {id: 11, name: 'Страна 3', checked: false},
+                            {id: 12, name: 'Страна 4', checked: false},
                         ]
                     },
                 ],
-                // sectionList: [
-                //     { id:1, name: 'Раздел 1', checked: false },
-                //     { id:2, name: 'Раздел 2', checked: false },
-                //     { id:3, name: 'Раздел 3', checked: false },
-                //     { id:4, name: 'Раздел 4', checked: false },
-                // ],
-                // brandList: [
-                //     { id:1, name: 'Бренд 1', checked: false },
-                //     { id:2, name: 'Бренд 2', checked: false },
-                //     { id:3, name: 'Бренд 3', checked: false },
-                //     { id:4, name: 'Бренд 4', checked: false },
-                // ],
                 countryList: [
-                    { id:1, name: 'Страна 1', checked: false },
-                    { id:2, name: 'Страна 2', checked: false },
-                    { id:3, name: 'Страна 3', checked: false },
-                    { id:4, name: 'Страна 4', checked: false },
+                    {id: 1, name: 'Страна 1', checked: false},
+                    {id: 2, name: 'Страна 2', checked: false},
+                    {id: 3, name: 'Страна 3', checked: false},
+                    {id: 4, name: 'Страна 4', checked: false},
                 ],
                 cardList: [
                     {
@@ -195,17 +180,17 @@
                 array.map(item => item.checked = false)
             },
             itemChecked(id) {
-                if (this.sortList.find( el => el.id === id).checked === true) {
+                if (this.sortList.find(el => el.id === id).checked === true) {
                     this.clearArray(this.sortList)
                     return
                 }
                 this.clearArray(this.sortList)
-                this.sortList.find( el => el.id === id).checked = true
+                this.sortList.find(el => el.id === id).checked = true
             }
         },
         computed: {
-            sortTitle: function() {
-                return this.sortList.find( el => el.checked === true)?.name ?? 'Сортировка по умолчанию'
+            sortTitle: function () {
+                return this.sortList.find(el => el.checked === true)?.name ?? 'по умолчанию'
             }
         }
     }
@@ -246,40 +231,71 @@
             }
         }
 
-        &-main {
+        &-sort {
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
 
-            &-dropdown {
-                margin-bottom: 24px;
-                align-self: flex-end;
-                z-index: 5;
+            @media (max-width: 768px) {
+                margin-bottom: 12px;
             }
 
-            &-body {
-                display: flex;
-                gap: 40px;
+            &-button {
+               display: none;
 
-                &-filters {
-                    width: calc(100%/4);
+                @media (max-width: 768px) {
+                    display: block;
                 }
+            }
 
-                &-list {
+            &-dropdown {
+                justify-self: right;
+                z-index: 5;
+            }
+        }
+
+
+        &-body {
+            display: flex;
+            column-gap: 40px;
+
+            @media (max-width: 768px) {
+                flex-wrap: wrap;
+            }
+
+            &-filters {
+                width: 25%;
+
+                @media (max-width: 768px) {
                     width: 100%;
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
+                }
+            }
 
-                    &-item {
-                        width: calc(100% / 4 - 60px / 3);
-                        margin-bottom: 40px;
+            &-list {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                &-item {
+                    width: calc(100% / 4 - 60px / 3);
+                    margin-bottom: 40px;
+
+                    @media (max-width: 1024px) {
+                        width: calc(100% /2 - 20px);
+                    }
+
+                    @media (max-width: 768px) {
+                        width: 100%;
+                        margin-bottom: 20px;
                     }
                 }
             }
         }
 
         @media (max-width: 768px) {
-            margin-top: 152px;
+            margin-top: 124px;
         }
     }
 </style>
