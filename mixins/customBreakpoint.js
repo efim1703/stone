@@ -2,6 +2,7 @@ export default {
     data() {
         return {
             isLaptoop: false,
+            isTable: false
         }
     },
     mounted() {
@@ -20,6 +21,7 @@ export default {
         },
         changeBreakpoint(size) {
             size <= 1024 ? this.isLaptoop = true : this.isLaptoop = false
+            size <= 768 ? this.isTable = false : this.isTable = true
         }
     },
 }

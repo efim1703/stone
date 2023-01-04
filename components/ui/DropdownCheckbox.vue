@@ -90,8 +90,13 @@
             margin-bottom: 10px;
         }
 
+        @media (max-width: 1024px) {
+            margin-left: 4px;
+        }
+
         @media (max-width: 768px) {
             font-size: 14px;
+            margin-left: 40px;
         }
     }
 </style>

@@ -30,8 +30,8 @@
 </template>
 
 <script>
-    import ProjectCard from '~/components/ProjectCard.vue'
-    import DropdownSelect from '~/components/ui/DropdownSelect.vue';
+    import ProjectCard from '@/components/ProjectCard.vue'
+    import DropdownSelect from '@/components/ui/DropdownSelect.vue';
 
     export default {
         name: 'index',
@@ -117,7 +117,7 @@
         },
         computed: {
             materialTitle: function() {
-                return this.materialsList.find( el => el.checked === true)?.name ?? 'Тип изделия'
+                return this.materialsList.find( el => el.checked === true)?.name ?? 'по типу изделия'
             }
         }
     }
@@ -179,7 +179,7 @@
         .project {
             &-title-wrapper {
                 text-align: center;
-                margin: 152px 0 20px;
+                margin: 124px 0 20px;
 
                 .h-subtitle {
                     margin-bottom: 0;

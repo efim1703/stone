@@ -7,7 +7,7 @@
             @change="item.checked = !item.checked"
             class="checkbox"
         >
-        <label :for="item.id">{{ item.name }} {{ item.checked }}</label>
+        <label :for="item.id">{{ item.name }}</label>
     </div>
 </template>
 
