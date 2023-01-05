@@ -1,8 +1,8 @@
 <template>
     <div class="wrapper">
-        <div class="logout d-flex flex-column align-center">
-            <div class="logout-title">LOGOUT</div>
-            <div class="logout-body">
+        <div class="login d-flex flex-column align-center">
+            <div class="login-title">LOGIN</div>
+            <div class="login-body">
                 <input
                     v-model="formData.name"
                     type="text"
@@ -18,8 +18,8 @@
                 <CustomButton
                     full-width
                     title="Войти"
-                    @click="logout"
-                    @keydown.enter="logout"
+                    @click="login"
+                    @keydown.enter="login"
                 />
             </div>
         </div>
@@ -28,6 +28,7 @@
 
 <script>
 import CustomButton from "~/components/ui/CustomButton.vue";
+import adminRepository from "~/services/repositories/admin-repository";
 
 export default {
     components: {CustomButton},
@@ -36,47 +37,24 @@ export default {
     data() {
         return {
             formData: {
-                name: '',
-                password: ''
+                name: 'gevorg',
+                password: 'gevorg'
             },
             errorPassword: false,
             errorLogin: false
         }
     },
-    // async fetch() {
-    //     const response = await this.$axios.post('/api/login', {name: 'gevorg', password: 'gevorg'})
-    //     console.log(response)
-    // },
     methods: {
-        async logout() {
-            // const response = await this.$axios.post('/api/login', {name: this.formData.name, password: this.formData.password})
-            // console.log(response)
-            // if (response.data.error?.code === 401) {
-            //     console.log(response.data.error)
-            // }
-            // if (response.data.error?.code === 422) {
-            //     console.log(response.data.error)
-            // }
-            // if (response.data?.access_token) {
-            //     // localStorage.setItem('api_token', response.access_token)
-            //     // this.$router.push({ name: 'AdminProducts' })
-            // }
-            const response = await fetch('http://malire7m.beget.tech/api/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(this.formData)
-            }).then(response => response.json())
+        async login() {
+            try {
+                const response = await adminRepository.login({...this.formData})
 
-            if (response.error?.code === 401 || response.error?.code === 422) {
-                this.errorLogin = true
-                this.errorPassword = true
-            }
-
-            if (response.access_token) {
-                localStorage.setItem('api_token', response.access_token)
-                this.$router.push({ path: '/' })
+                if (response.access_token) {
+                    localStorage.setItem('api_token', response.access_token)
+                    this.$router.push({ path: '/admin/projects' })
+                }
+            } catch (error) {
+                console.warn(error)
             }
         }
     }
@@ -88,7 +66,7 @@ export default {
     height: 100vh;
     color: $primary;
 
-    .logout {
+    .login {
         position: relative;
         top: 50%;
         transform: translateY(-50%);
