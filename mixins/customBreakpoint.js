@@ -10,7 +10,7 @@ export default {
         this.changeBreakpoint(window.innerWidth)
     },
     beforeDestroy() {
-        window.removeEventListener('resize');
+        window.removeEventListener('resize', null);
     },
     methods: {
         resizeWidth(event) {

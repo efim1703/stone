@@ -129,14 +129,36 @@
             width: 65%;
             margin: 124px 0 56px;
 
+            @media (max-width: 1024px) {
+                margin-bottom: 32px;
+                width: 100%;
+            }
+
+            @media (max-width: 768px) {
+                text-align: center;
+                margin: 124px 0 20px;
+            }
+
+            @media (max-width: 425px) {
+                margin-top: 148px;
+            }
+
             .h-subtitle {
                 margin-bottom: 12px;
+
+                @media (max-width: 768px) {
+                    margin-bottom: 0;
+                }
             }
         }
 
         .project-list-wrapper {
             display: flex;
             flex-direction: column;
+
+            @media (max-width: 768px) {
+                margin-bottom: 8px;
+            }
 
             .project-dropdown {
                 align-self: flex-end;
@@ -150,52 +172,26 @@
             justify-content: space-between;
             row-gap: 60px;
 
+            @media (max-width: 768px) {
+                row-gap: 30px;
+            }
+
             &-item {
                 width: calc(100% / 3 - 88px / 3);
-            }
-        }
-    }
 
-    @media (max-width: 1024px) {
-        .project {
-            &-title-wrapper {
-                margin-bottom: 32px;
-                width: 100%;
-            }
-
-            &-list {
-                &-item {
+                @media (max-width: 1024px) {
                     width: calc(100% / 2 - 88px / 2);
                 }
-            }
 
-            p {
-                display: none;
-            }
-        }
-    }
-
-    @media (max-width: 768px) {
-        .project {
-            &-title-wrapper {
-                text-align: center;
-                margin: 124px 0 20px;
-
-                .h-subtitle {
-                    margin-bottom: 0;
-                }
-            }
-
-            .project-list-wrapper .project-dropdown {
-                margin-bottom: 8px;
-            }
-
-            &-list {
-                row-gap: 30px;
-
-                &-item {
+                @media (max-width: 768px) {
                     width: 100%;
                 }
+            }
+        }
+
+        @media (max-width: 1024px) {
+            p {
+                display: none;
             }
         }
     }
