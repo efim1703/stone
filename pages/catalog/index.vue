@@ -16,7 +16,7 @@
             <div class="catalog-sort">
                 <custom-button
                     @click="isTable=!isTable"
-                    title="Фильтр"
+                    title="Фильтры"
                     class="catalog-sort-button"
                 />
                 <dropdown-select
@@ -200,16 +200,16 @@
     .catalog {
         margin-top: 124px;
 
+        @media (max-width: 768px) {
+            margin-top: 124px;
+        }
+
+        @media (max-width: 425px) {
+            margin-top: 148px;
+        }
+
         &-title {
             width: 75%;
-
-            p {
-                margin-bottom: 28px;
-
-                @media (max-width: 768px) {
-                    margin-bottom: 8px;
-                }
-            }
 
             @media (max-width: 1024px) {
                 width: 100%;
@@ -217,6 +217,14 @@
 
             @media (max-width: 768px) {
                 text-align: center;
+            }
+
+            p {
+                margin-bottom: 28px;
+
+                @media (max-width: 768px) {
+                    margin-bottom: 8px;
+                }
             }
         }
 
@@ -234,15 +242,18 @@
         &-sort {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-end;
             margin-bottom: 24px;
 
+
             @media (max-width: 768px) {
+                justify-content: space-between;
                 margin-bottom: 12px;
             }
 
             &-button {
-               display: none;
+                display: none;
+                border-radius: 2px;
 
                 @media (max-width: 768px) {
                     display: block;
@@ -292,10 +303,6 @@
                     }
                 }
             }
-        }
-
-        @media (max-width: 768px) {
-            margin-top: 124px;
         }
     }
 </style>
