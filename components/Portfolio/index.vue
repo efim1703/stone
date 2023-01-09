@@ -1,7 +1,7 @@
 <template>
     <div class="portfolio">
         <h3 class="h-subtitle">Наш проект</h3>
-        <h2 class="h-title">Изучите дизайн наших кухонь</h2>
+        <h2 class="h2-title">Изучите дизайн наших кухонь</h2>
         <p class="portfolio-text">Изучите готовые кухни некоторых наших клиентов и посмотрите, как они создали кухню
             своей мечты, получая идеи для своей собственной</p>
         <div class="portfolio-list">
@@ -66,13 +66,14 @@
         text-align: center;
 
         & > *:not(:last-child) {
-            margin-bottom: 2%;
+            margin-bottom: 8px;
         }
 
         &-list {
             display: flex;
             gap: 25px;
             flex-wrap: wrap;
+            margin-top: 40px;
             justify-content: space-between;
 
             &-item {
@@ -89,7 +90,7 @@
             }
         }
 
-        p {
+        &-text {
             color: $light;
             width: 50%;
             margin: 0 auto;

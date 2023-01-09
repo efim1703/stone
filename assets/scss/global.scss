@@ -70,7 +70,7 @@
 .h2-title {
     font-style: normal;
     font-weight: 600;
-    font-size: 48px;
+    font-size: 32px;
     line-height: 60px;
 
     @media (max-width: 768px) {
@@ -81,11 +81,12 @@
 
 .h1-title {
     font-weight: 700;
-    font-size: 40px;
+    font-size: 48px;
     margin-bottom: 28px;
 
     @media (max-width: 768px) {
         text-align: center;
+        font-size: 32px;
         margin-bottom: 12px;
     }
 
