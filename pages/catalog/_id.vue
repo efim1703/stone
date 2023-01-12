@@ -8,6 +8,11 @@
             >
             <div class="card-page-info">
                 <h1 class="h1-title">{{ cardFiller.title }}</h1>
+                <div class="card-page-info-brand">
+                    <p>Брэнд: {{ card.brand }}</p>
+                    <p>Страна: {{ card.country }}</p>
+                    <p>Материал: {{ card.material }}</p>
+                </div>
                 <h2 class="h2-title">{{ cardFiller.description }}</h2>
                 <p class="card-page-info-text">
                     Для расчёта стоимости изделия из искуственного камня {{ cardFiller.title }}
@@ -46,8 +51,9 @@
         },
         methods: {
             async fetchCard() {
-                const { data } = await this.$axios.get(`/api/projects/get/${ this.$route.params.id }`)
-                this.card = data.data.projects[0]
+                const { data } = await this.$axios.get(`/api/materials/get/${ this.$route.params.id }`)
+                this.card = data.data.materials[0]
+                console.log(...data.data.materials)
             }
         }
     }
@@ -78,6 +84,12 @@
             .h1-title {
                 margin-bottom: 0;
                 color: $action;
+            }
+
+            &-brand {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
             }
 
             .h2-title {
