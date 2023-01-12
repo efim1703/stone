@@ -69,8 +69,8 @@
 
         &-info {
             display: flex;
-            justify-content: space-around;
             flex-direction: column;
+            gap: 40px;
 
             @media (max-width: 1040px) {
                 row-gap: 28px;
@@ -89,11 +89,11 @@
             &-brand {
                 display: flex;
                 flex-direction: column;
-                gap: 8px;
+                gap: 4px;
             }
 
             .h2-title {
-                line-height: 24px;
+                line-height: 28px;
                 font-size: 24px;
             }
 
@@ -133,9 +133,11 @@
         .container {
             display: flex;
             gap: 40px;
+            align-items: center;
 
             @media (max-width: 1040px) {
                 flex-direction: column;
+                align-items: normal;
             }
 
             @media (max-width: 768px) {
@@ -144,6 +146,10 @@
 
             img {
                 height: 500px;
+
+                @media (max-width: 1240px) {
+                    height: 400px;
+                }
 
                 @media (max-width: 1040px) {
                     height: 100%;
