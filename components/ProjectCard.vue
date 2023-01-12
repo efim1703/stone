@@ -1,6 +1,6 @@
 <template>
     <div class="project">
-        <img :src="require(`@/static/portfolios/${ project.imageName }.png`)" :alt="`${ project.id } project image`">
+        <img :src="require(`@/static/portfolios/${ project.imageName }.png`)" alt="Project image">
         <h3 class="project-title">{{ project.title }}</h3>
         <p>{{ project.caption }}</p>
         <custom-button title="Подробнее о проекте" arrow/>
@@ -32,7 +32,6 @@
         img {
             object-fit: cover;
             width: 100%;
-            height: 100%;
             margin-bottom: 32px;
         }
 

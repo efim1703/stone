@@ -31,10 +31,10 @@
                 <nav :class="['navigation', { 'burger-status': isLaptoop}]"
                      v-if="!isLaptoop || (isLaptoop && showBurgerDrawer)">
                     <nuxt-link to="/" active-class="active" exact>ГЛАВНАЯ</nuxt-link>
-                    <nuxt-link to="project" active-class="active">ПОРТФОЛИО</nuxt-link>
-                    <nuxt-link to="catalog" active-class="active">КАТАЛОГ</nuxt-link>
-                    <nuxt-link to="about" active-class="active">О НАС</nuxt-link>
-                    <nuxt-link to="contact" active-class="active">КОНТАКТЫ</nuxt-link>
+                    <nuxt-link to="/project" active-class="active">ПОРТФОЛИО</nuxt-link>
+                    <nuxt-link to="/catalog" active-class="active">КАТАЛОГ</nuxt-link>
+                    <nuxt-link to="/about" active-class="active">О НАС</nuxt-link>
+                    <nuxt-link to="/contact" active-class="active">КОНТАКТЫ</nuxt-link>
                 </nav>
                 <div v-if="isLaptoop" class="burger flex-center" @click="showBurgerDrawer = !showBurgerDrawer">
                     <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
